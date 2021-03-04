@@ -1,0 +1,20 @@
+.divContainer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1px;
+}
+
+.summaryContainer > p{
+  color: rgb(12, 7, 7);
+  margin-right:10%;
+  text-align: justify; 
+}
+
+.summaryContainer > h4{
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 10px;
+  height: 30px;
+  padding-top: 5px;
+  margin-top: 0px;
+}
