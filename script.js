@@ -1,12 +1,13 @@
 //You can edit ALL of the code here
 const mySelectElem = document.createElement("select");
+
 const myShowSelectElem = document.createElement("select");
 const mainShowDiv = document.createElement("div");
 
 function setup() {
   let allShows = getAllShows();
-  console.log(allShows);
-  let allEpisodes = getAllEpisodes();
+   console.log(allShows);
+   let allEpisodes = getAllEpisodes();
   //makePageForEpisodes(allEpisodes);
 
   let myRootEl = document.getElementById("root");
@@ -64,6 +65,7 @@ function setup() {
 
     allEpisodeList(filteredEpisodes);
   });
+  
   //creating a select function drop down
   function selectFunction(allEpisodes) {
     mySelectElem.innerHTML = "";
@@ -75,7 +77,7 @@ function setup() {
   };
       mySelectElem.appendChild(myOptionElem);
     });
-    const displayInput = document.getElementById("displayInput");
+    const displayInput = document.getElementById("displayInput"); 
     displayInput.insertBefore(mySelectElem, displayInput.lastChild);
   }
 
@@ -125,11 +127,10 @@ function setup() {
         .then(function (response) {
           return response.json();
         })
-        .then(function (data) {
-          allEpisodes = data;
+        .then(function (allEpisodes) {
           allEpisodeList(allEpisodes);
           selectFunction(allEpisodes);
-          console.log(data);
+      
         })
 
         .catch(function (error) {
@@ -142,8 +143,19 @@ function setup() {
   
   selectShowFunction(allShows);
 
+//creating a back to list button
+  const button = document.createElement("button");
+  button.textContent = "Back to shows listing";
+  displayInput.appendChild(button);
+  button.addEventListener("click", function(){
+  
+  showList(allShows);
+  
+  })
+
    function showList(shows) {
-    shows.forEach(function (show) {
+      MyEpisodesDiv.innerHTML = "";
+      shows.forEach(function (show) {
       const divElInner = document.createElement("div");
       const h3El = document.createElement("h3");
       const divEl = document.createElement("div");
