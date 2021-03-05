@@ -1,6 +1,7 @@
 //You can edit ALL of the code here
 const mySelectElem = document.createElement("select");
 const myShowSelectElem = document.createElement("select");
+const mainShowDiv = document.createElement("div");
 
 function setup() {
   let allShows = getAllShows();
@@ -41,7 +42,7 @@ function setup() {
     myRootEl.appendChild(MyEpisodesDiv);
   }
 
-  allEpisodeList(allEpisodes);
+  //allEpisodeList(allEpisodes);
   //level 200
   //let myMatchedList = document.getElementById("matchedList");
   let myInputEl = document.getElementById("input");
@@ -78,7 +79,7 @@ function setup() {
     displayInput.insertBefore(mySelectElem, displayInput.lastChild);
   }
 
-  selectFunction(allEpisodes);
+  //selectFunction(allEpisodes);
 
   function mySelectedEpisode() {
     mySelectElem.addEventListener("change", function (event) {
@@ -92,7 +93,9 @@ function setup() {
   }
   mySelectedEpisode();
 
+  //select show function
   function selectShowFunction(allShows) {
+   
     allShows.forEach(function (show) {
       const myOptionElem = document.createElement("option");
       myOptionElem.textContent = show.name;
@@ -115,6 +118,7 @@ function setup() {
     });
 
     myShowSelectElem.onchange = function (event) {
+       mainShowDiv.innerHTML = "";
       let showID = event.target.value;
       console.log(showID);
       fetch(`https://api.tvmaze.com/shows/${showID}/episodes`)
@@ -135,10 +139,10 @@ function setup() {
     const displayInput = document.getElementById("displayInput");
     displayInput.insertBefore(myShowSelectElem, displayInput.firstChild);
   }
+  
   selectShowFunction(allShows);
 
-  const mainShowDiv = document.createElement("div");
-  function showList(shows) {
+   function showList(shows) {
     shows.forEach(function (show) {
       const divElInner = document.createElement("div");
       const h3El = document.createElement("h3");
