@@ -40,3 +40,40 @@
   
   padding:2em 0 2em;
 }
+
+.showDiv{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  
+
+}
+.showContainer{
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 10px; 
+/* text-align: justify; */
+}
+
+/* .showContainer {
+  
+
+
+  /* border: 2px solid green;
+  border-radius: 10px;
+  height: 30px;
+  padding-top: 5px;
+  margin-top: 0px; */
+
+.showPara {
+  color: rgb(12, 7, 7);
+  margin-right:10%;
+  text-align: justify; 
+
+}
+.divEl{
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  text-align:justify;
+}
