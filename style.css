@@ -46,12 +46,15 @@
   grid-template-columns: 1fr;
   gap: 10px;
   
+  
 
 }
 .showContainer{
-  border: 2px solid green;
-  border-radius: 10px;
+  /* border: 2px solid green;
+  border-radius: 10px; */
   padding: 10px; 
+  background-color: rgb(206, 179, 202);
+  margin-top:0%;
 /* text-align: justify; */
 }
 
@@ -69,11 +72,20 @@
   color: rgb(12, 7, 7);
   margin-right:10%;
   text-align: justify; 
-
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #b6a2b4;
+  
 }
 .divEl{
   margin: 5px;
   display: flex;
-  justify-content: space-between;
-  text-align:justify;
+  justify-content:space-evenly;
+  text-align: left;
+}
+
+.header{
+  border: 2px solid green;
+  border-radius: 10px;
+  text-align: center;
 }
